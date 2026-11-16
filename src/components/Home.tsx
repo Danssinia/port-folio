@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   Cpu,
+  Download,
   Globe,
   Mail,
 } from "lucide-react";
@@ -88,7 +89,7 @@ export default function Home() {
         {/* ============================ Main grid ============================ */}
         <div className="grid grid-cols-2 gap-3.5 lg:grid-cols-[repeat(4,minmax(0,1fr))_minmax(0,0.79fr)] lg:grid-rows-[244px_254px] lg:gap-3.5">
           {/* ---------- Intro ---------- */}
-          <Pop className={`${card} col-span-2 flex flex-col p-6 sm:p-7`}>
+          <Pop className={`${card} order-1 col-span-2 flex flex-col p-6 sm:p-7 lg:order-none`}>
             <div className="flex items-center gap-3">
               <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full">
                 <Image src={DAN} alt="Daniel" fill sizes="48px" className="object-cover object-[center_15%]" />
@@ -110,7 +111,7 @@ export default function Home() {
           </Pop>
 
           {/* ---------- First project (center crop) ---------- */}
-          <Pop className={`${card} group h-[220px] lg:h-auto`}>
+          <Pop className={`${card} order-2 group h-[220px] lg:order-none lg:h-auto`}>
             <Image
               src={firstProject.image}
               alt={firstProject.title}
@@ -122,7 +123,7 @@ export default function Home() {
           </Pop>
 
           {/* ---------- Second project (center crop) ---------- */}
-          <Pop className={`${card} group h-[220px] lg:h-auto`}>
+          <Pop className={`${card} order-2 group h-[220px] lg:order-none lg:h-auto`}>
             <Image
               src={secondProject.image}
               alt={secondProject.title}
@@ -133,7 +134,7 @@ export default function Home() {
           </Pop>
 
           {/* ---------- Right column: theme toggle / socials / resources ---------- */}
-          <div className="col-span-2 flex flex-col gap-3.5 lg:col-span-1 lg:col-start-5 lg:row-span-2 lg:row-start-1">
+          <div className="order-4 col-span-2 flex flex-col gap-3.5 lg:order-none lg:col-span-1 lg:col-start-5 lg:row-span-2 lg:row-start-1">
             {/* Theme toggle (first, so it is the first thing a new visitor sees) */}
             <Pop className={`${card} flex h-[87px] items-center justify-center`}>
               <ThemeToggle />
@@ -158,25 +159,37 @@ export default function Home() {
               ))}
             </div>
 
-            <Pop className={`${card} min-h-[176px] flex-1 p-[22px]`}>
-              <p className="text-xs text-white/40">Resources</p>
-              <h2 className="mt-2.5 text-lg font-medium leading-[22px] text-white">
-                Resources to Speed your workflow
+            <Pop className={`${card} group min-h-[190px] flex-1 bg-[radial-gradient(ellipse_at_top_right,rgba(99,102,241,0.16),transparent_58%),#171717] p-[22px]`}>
+              <div className="flex items-center justify-between">
+                <p className="text-xs uppercase tracking-[0.1em] text-white/50">Resources</p>
+              </div>
+              <h2 className="mt-3 text-lg font-medium leading-[22px] text-white">
+                Want the full picture?
               </h2>
-              <p className="mt-2.5 text-xs leading-[18px] text-white/40">
-                View my resume &amp; professional background
+              <p className="mt-1.5 text-xs leading-[18px] text-white/50">
+                Explore my experience, skills, and professional background.
               </p>
-              <CircleArrow href="/Daniel-Merkebu-Fullstack.pdf" label="View resume" className="bottom-5 right-5" />
+              <a
+                href="/Daniel-Merkebu-Fullstack.pdf"
+                download
+                className="mt-4 flex w-full items-center justify-between rounded-xl border border-indigo-300/25 bg-indigo-300/[0.1] px-3.5 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-indigo-200/50 hover:bg-indigo-300/[0.18] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-200"
+              >
+                <span className="flex items-center gap-2.5">
+                  <Download size={16} className="text-indigo-200" />
+                  Download my resume
+                </span>
+                <ArrowUpRight size={16} className="text-white/60 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
             </Pop>
           </div>
 
           {/* ---------- Portrait ---------- */}
-          <Pop className={`${card} col-span-2 h-[272px] sm:col-span-1 lg:h-auto`}>
+          <Pop className={`${card} order-5 col-span-2 hidden h-[272px] sm:col-span-1 sm:block lg:order-none lg:h-auto`}>
             <Image src={DAN} alt="Daniel Merkebu" fill sizes="(min-width: 1024px) 20vw, 50vw" className="object-cover object-top" />
           </Pop>
 
           {/* ---------- Tech stack ---------- */}
-          <Pop className={`${card} col-span-2 p-5 sm:col-span-1`}>
+          <Pop className={`${card} order-6 col-span-2 p-5 sm:col-span-1 lg:order-none`}>
             <p className="text-xs text-white/40">Tech Arsenal</p>
             <h2 className="mt-1.5 text-lg font-medium text-white">Stack I Use</h2>
             <div className="mt-8 grid grid-cols-3 gap-3">
@@ -197,7 +210,7 @@ export default function Home() {
           </Pop>
 
           {/* ---------- Featured project ---------- */}
-          <Pop className={`${card} group col-span-2 h-[260px] lg:h-auto`}>
+          <Pop className={`${card} order-3 group col-span-2 h-[260px] lg:order-none lg:h-auto`}>
             <Image
               src={featuredProject.image}
               alt={featuredProject.title}
@@ -222,11 +235,11 @@ export default function Home() {
           <Pop className={`${card} p-6 sm:p-7 lg:h-[194px]`}>
             <p className="text-xs uppercase tracking-[0.08em] text-white/45">Currently Exploring</p>
             <h2 className="mt-2 max-w-[470px] text-xl font-medium leading-[26px] text-white sm:text-2xl sm:leading-[28px]">
-              Engineering scalable systems &amp; cloud architecture.
+              Shipping full-stack apps from code to production.
             </h2>
             <p className="mt-2.5 max-w-[470px] text-xs leading-[18px] text-white/40">
-              I am also sharpening my skills in backend engineering, application security, and modern
-              full-stack web technologies.
+              I’m exploring reliable deployment workflows, CI/CD, and release practices that make
+              applications easier to ship and maintain.
             </p>
 
             {/* Chip decoration */}
