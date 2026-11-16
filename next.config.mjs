@@ -9,6 +9,7 @@ const nextConfig = {
   //to make it available on github pages, we need to set the basePath to the repository name and set the output to export
   output: 'export',
   basePath: '/port-folio',
+  assetPrefix:'/port-folio/',
   images: {
     unoptimized: true,
   },
