@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+/* next-themes adds .light to <html>; keep the existing dark palette as default. */
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  background-color: #cbd3de !important;
+  color: #17191d !important;
+}
+
+html.light [class~="bg-[#0F0F0F]"],
+html.light [class~="bg-[#0f0f0f]"],
+html.light [class~="bg-[#0d0d0d]"],
+html.light [class*="bg-[#0F0F0F]/"] {
+  background-color: #cbd3de !important;
+}
+
+html.light [class~="bg-[#171717]"],
+html.light [class~="bg-[#161616]"],
+html.light [class~="bg-[#1A1A1A]"],
+html.light [class~="bg-[#1a1a1a]"] {
+  background-color: #e1eaf6 !important;
+}
+
+html.light [class~="bg-[#202020]"],
+html.light [class~="bg-[#252525]"],
+html.light [class~="bg-[#272727]"],
+html.light [class~="bg-[#262626]"],
+html.light [class~="bg-[#2a2a2a]"],
+html.light [class~="bg-[#313131]"],
+html.light [class~="bg-[#1d1d1d]"],
+html.light [class~="bg-[#2C3E50]"] {
+  background-color: #cbd8e8 !important;
+}
+
+html.light [class~="bg-white"] {
+  background-color: #e0e8f2 !important;
+}
+
+html.light [class*="bg-white/"] {
+  background-color: rgb(46 73 108 / 9%) !important;
+}
+
+html.light [class*="bg-black/"] {
+  background-color: rgb(46 73 108 / 10%) !important;
+}
+
+html.light [class~="text-white"],
+html.light [class~="text-white/90"],
+html.light [class~="text-white/85"],
+html.light [class~="text-white/80"] {
+  color: #17191d !important;
+}
+
+html.light [class~="text-white/70"],
+html.light [class~="text-white/65"],
+html.light [class~="text-white/60"],
+html.light [class~="text-white/55"],
+html.light [class~="text-white/50"] {
+  color: #454b55 !important;
+}
+
+html.light [class~="text-white/45"],
+html.light [class~="text-white/40"] {
+  color: #626a76 !important;
+}
+
+html.light [class~="text-[#C2C2B3]"],
+html.light [class~="text-[#CFC7AE]"],
+html.light [class~="text-[gray]"] {
+  color: #535b66 !important;
+}
+
+html.light [class*="border-white"],
+html.light [class*="border-[#313131]"] {
+  border-color: rgb(63 85 115 / 42%) !important;
+}
+
+html.light [class*="rounded-[28px]"] {
+  box-shadow: 0 8px 24px rgb(37 53 75 / 18%);
+}
