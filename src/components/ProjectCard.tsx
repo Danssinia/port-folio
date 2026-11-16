@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import Pop from "./Pop";
 import type { Project } from "@/data/projects";
 
-export default function ProjectCard({ project, className = "" }: { project: Project; className?: string }) {
+export default function ProjectCard({ project, className = "", eagerImage = false }: { project: Project; className?: string; eagerImage?: boolean }) {
   return (
     <Pop className={`group h-full overflow-hidden rounded-[26px] border border-white/[0.08] bg-[#171717] transition-colors duration-300 hover:border-blue-300/30 ${className}`}>
       <Link href={`/projects/${project.slug}`} className="flex h-full flex-col" aria-label={`View ${project.title} project`}>
@@ -14,6 +14,7 @@ export default function ProjectCard({ project, className = "" }: { project: Proj
             src={project.image}
             alt={project.title}
             fill
+            loading={eagerImage ? "eager" : undefined}
             sizes="(min-width: 1280px) 28vw, (min-width: 768px) 45vw, 90vw"
             className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
           />

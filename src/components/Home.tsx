@@ -25,7 +25,9 @@ import { projects } from "@/data/projects";
 /* ------------------------------------------------------------------ */
 /*  Images (put these files in /public/images)                         */
 /* ------------------------------------------------------------------ */
-const DAN = "/images/dan.jpg";
+const BASE_PATH = "/port-folio";
+const DAN = `${BASE_PATH}/images/dan.jpg`;
+const RESUME = `${BASE_PATH}/Daniel-Merkebu-Fullstack.pdf`;
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -116,7 +118,7 @@ export default function Home() {
               src={firstProject.image}
               alt={firstProject.title}
               fill
-              priority
+              loading="eager"
               sizes="(min-width: 1024px) 20vw, 50vw"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             />
@@ -170,7 +172,7 @@ export default function Home() {
                 Explore my experience, skills, and professional background.
               </p>
               <a
-                href="/Daniel-Merkebu-Fullstack.pdf"
+                href={RESUME}
                 download
                 className="mt-4 flex w-full items-center justify-between rounded-xl border border-indigo-300/25 bg-indigo-300/[0.1] px-3.5 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-indigo-200/50 hover:bg-indigo-300/[0.18] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-200"
               >
@@ -215,7 +217,7 @@ export default function Home() {
               src={featuredProject.image}
               alt={featuredProject.title}
               fill
-              priority
+              loading="eager"
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             />

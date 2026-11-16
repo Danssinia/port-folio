@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import "./globals.css";
 
+const BASE_PATH = "/port-folio";
+
 export const metadata: Metadata = {
   title: {
     default: "MyPortfolio",
@@ -12,8 +14,8 @@ export const metadata: Metadata = {
   },
   description: "Daniel Merkebu - Web Developer based in Addis Ababa. Portfolio, services and projects.",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo192.png",
+    icon: `${BASE_PATH}/logo.png`,
+    apple: `${BASE_PATH}/logo192.png`,
   },
 };
 
